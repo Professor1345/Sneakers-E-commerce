@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* 
+    ////////////////
+    HEADER
+    //////////////// 
+    */
+  .header {
+    @apply flex justify-between items-center flex-row;
+    @apply px-4 sm:px-0;
+    @apply py-4 sm:py-0;
+    @apply bg-white;
+  }
+  .headerOne {
+    @apply flex flex-col-reverse sm:flex-row;
+    @apply items-center;
+  }
+  .header-logo {
+    @apply w-[135px] h-[20px] sm:w-[138px] sm:h-[20px];
+    @apply pb-[2px];
+  }
+  .navbar-menu {
+    @apply flex sm:hidden;
+    @apply mr-4;
+  }
+  .navbar-container {
+    @apply flex sm:flex z-[2] sm:z-auto flex-col sm:flex-row items-start justify-start sm:items-center sm:justify-between;
+    @apply fixed  top-0 -left-[60%]  w-[60%] h-screen sm:w-auto sm:h-auto sm:static bg-white sm:bg-transparent;
+    @apply mx-0 sm:mx-2 md:mx-5;
+    @apply p-5 sm:p-0;
+    @apply duration-150;
+  }
+  .navbar {
+    @apply flex flex-col sm:flex-row text-[hsl(220,14%,75%)];
+    /* bg-slate-400; */
+    @apply mt-7 sm:mt-0;
+  }
+  .navbar-child {
+    @apply mx-0 sm:mx-[10px] md:mx-3;
+    @apply text-base sm:text-sm md:text-base;
+    @apply py-2 sm:py-3 md:py-5;
+    @apply font-semibold;
+    @apply sm:border-y-[4px] sm:border-solid sm:border-transparent;
+    /* @apply focus:sm:border-b-[hsl(26,_100%,_55%)]; */
+    @apply text-left sm:text-center;
+    @apply hover:text-[hsl(219,9%,45%)];
+  }
+
+  .headerTwo {
+    @apply flex flex-row items-center;
+  }
+  .cart {
+    @apply flex rounded-full cursor-pointer mx-4;
+    /* @apply sm:border-[2px] sm:border-solid sm:border-transparent; */
+    /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
+    /* @apply focus:sm:border-[hsl(26,_100%,_55%)]; */
+    /* @apply hover:sm:border-[hsl(26,_100%,_55%)]; */
+    @apply hover:invert;
+  }
+  .user {
+    @apply size-8 sm:size-9;
+    @apply rounded-full cursor-pointer;
+
+    @apply border-[2px] border-solid border-transparent;
+    /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
+    @apply focus:border-[hsl(26,_100%,_55%)];
+    @apply hover:border-[hsl(26,_100%,_55%)];
+  }
+
+  /* 
+    ////////////////
+    SECTION
+    //////////////// 
+    */
+  .section {
+    @apply flex flex-col sm:flex-row;
+    @apply my-16;
+    @apply bg-black/50;
+  }
+  .sectionImage {
+    @apply flex-1
+    /* @apply basis-1/2; */
+    /* @apply */;
+  }
+
+  .imageDisplay {
+    @apply rounded-2xl;
+    @apply overflow-hidden;
+    @apply my-3;
+  }
+  .imageButtonContainer {
+    @apply hidden sm:flex flex-row my-3;
+  }
+  .imageButton {
+    @apply flex-1;
+    @apply mx-3;
+    @apply bg-black;
+    @apply rounded-2xl;
+    /* @apply size-[100px]; */
+    /* @apply relative; */
+    @apply overflow-hidden;
+  }
+  .imageButton img {
+    /* @apply p-2; */
+    /* @apply rounded-; */
+  }
+  .imageButton:first-child {
+    @apply ml-0;
+  }
+  .imageButton:last-child {
+    @apply mr-0;
+  }
+
+  .sectionDetails {
+    @apply flex-1;
+    /* @apply basis-1/2; */
+  }
+}
