@@ -35,7 +35,7 @@
   .navbar-container {
     @apply flex sm:flex z-[2] sm:z-auto flex-col sm:flex-row items-start justify-start sm:items-center sm:justify-between;
     @apply fixed  top-0 -left-[60%]  w-[60%] h-screen sm:w-auto sm:h-auto sm:static bg-white sm:bg-transparent;
-    @apply mx-0 sm:mx-2 md:mx-5;
+    @apply mx-0 sm:mx-2 md:mx-6;
     @apply p-5 sm:p-0;
     @apply duration-150;
   }
@@ -45,14 +45,14 @@
     @apply mt-7 sm:mt-0;
   }
   .navbar-child {
-    @apply mx-0 sm:mx-[10px] md:mx-3;
+    @apply mx-0 sm:mx-[10px] md:mx-[14px];
     @apply text-base sm:text-sm md:text-base;
-    @apply py-2 sm:py-3 md:py-5;
+    @apply py-2 sm:py-3 md:py-6;
     @apply font-semibold;
     @apply sm:border-y-[4px] sm:border-solid sm:border-transparent;
     /* @apply focus:sm:border-b-[hsl(26,_100%,_55%)]; */
     @apply text-left sm:text-center;
-    @apply hover:text-[hsl(219,9%,45%)];
+    @apply hover:text-[hsl(219,9%,45%)] duration-150;
   }
 
   .headerTwo {
@@ -64,7 +64,7 @@
     /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
     /* @apply focus:sm:border-[hsl(26,_100%,_55%)]; */
     /* @apply hover:sm:border-[hsl(26,_100%,_55%)]; */
-    @apply hover:invert;
+    @apply hover:invert duration-150;
   }
   .user {
     @apply size-8 sm:size-9;
@@ -72,8 +72,8 @@
 
     @apply border-[2px] border-solid border-transparent;
     /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
-    @apply focus:border-[hsl(26,_100%,_55%)];
-    @apply hover:border-[hsl(26,_100%,_55%)];
+    @apply focus:border-[hsl(26,_100%,_55%)] duration-150;
+    @apply hover:border-[hsl(26,_100%,_55%)] duration-150;
   }
 
   /* 
@@ -107,15 +107,19 @@
   .imageButton {
     @apply flex-1;
     @apply mr-6;
-    @apply bg-black;
-    @apply rounded-lg;
+    /* @apply bg-black; */
+    @apply rounded-lg sm:rounded-md md:rounded-lg;
+    /* @apply hover:opacity-100; */
     /* @apply size-[100px]; */
     /* @apply relative; */
     @apply overflow-hidden;
+    @apply border-[2px] border-solid border-transparent;
+    @apply cursor-pointer;
   }
   .imageButton img {
     /* @apply p-2; */
     /* @apply rounded-; */
+    /* @apply hover:opacity-50 duration-150; */
   }
   .imageButton:first-child {
     @apply ml-0;
@@ -136,12 +140,12 @@
     @apply uppercase text-[hsl(26,100%,55%)] font-bold text-sm my-2;
   }
   .productDHeader {
-    @apply text-[hsl(220,13%,13%)] font-bold leading-[1] my-2 sm:my-[8px] md:my-3;
+    @apply text-[hsl(220,13%,13%)] font-bold leading-[1] my-2 sm:my-[8px] md:my-3 lg:my-4;
     @apply text-[28px] leading-[2rem] sm:text-2xl md:text-4xl;
   }
   .productDetails {
     @apply text-[hsl(219,9%,45%)] text-base sm:text-sm md:text-base;
-    @apply my-4 sm:my-3 md:my-5;
+    @apply my-4 sm:my-3 md:my-5 lg:my-6;
   }
   .productPrice {
     @apply flex flex-row sm:flex-col;
@@ -168,49 +172,52 @@
     @apply text-[hsl(219,9%,45%)] text-base sm:text-sm md:text-base line-through;
   }
   .inputCart {
-    @apply flex flex-wrap;
+    @apply flex flex-col sm:flex-row;
   }
   .inputCheck {
     @apply flex flex-row;
     @apply bg-[hsl(223,_64%,_98%)];
     @apply rounded-md;
-    @apply my-2;
+    @apply my-2 lg:my-3;
     @apply mr-0 sm:mr-3;
-    @apply w-full sm:w-auto;
+    @apply w-full sm:w-[40%];
   }
   .inputCheck input[type="number"] {
-    @apply w-full sm:w-[34px];
+    @apply w-[80%] sm:w-[33.33%];
     @apply bg-[hsl(223,_64%,_98%)];
     /* @apply px-[30%] sm:px-2; */
     @apply text-center;
     @apply flex-grow-[8] sm:flex-grow-0;
   }
-  .inputCheck input[type=button] {
-    @apply py-3 px-4;
+  .inputCheck input[type="button"] {
+    @apply py-3;
     @apply font-bold;
-    @apply text-[18px];
+    @apply text-[20px];
     @apply text-[hsl(26,100%,55%)];
-    @apply flex-grow-[1] sm:flex-grow-0;
+    @apply flex-grow-[1] sm:flex-grow-0 sm:shrink-0;
+    /* @apply flex items-center my-auto; */
+    @apply w-[20%] sm:w-[33.33%];
+    @apply hover:opacity-50 duration-150;
   }
   .submit {
     @apply flex items-center justify-center;
     @apply bg-[hsl(26,100%,55%)]  text-[hsl(25,100%,94%)];
     @apply rounded-md;
-    @apply  px-10;
+    @apply px-10;
     @apply py-3;
-    @apply my-2;
-    @apply w-full sm:w-auto;
+    @apply my-2 lg:my-3;
+    @apply w-full sm:w-[60%];
     @apply shadow-xl shadow-[hsl(26,100%,55%)]/30;
+    @apply hover:opacity-50 duration-150;
   }
-  .submit img{
+  .submit img {
     /* @apply text-[linear-gradient(to_right,_#FFEDE0_50%,_#000_50%)]; */
     /* @apply fill-white !important; */
     @apply brightness-[1.1];
     @apply size-[18px];
-
   }
 
-  .submit span{
+  .submit span {
     @apply px-2;
     @apply text-nowrap;
   }

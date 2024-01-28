@@ -13,6 +13,7 @@ const Header = () => {
       document.body.style.overflow = "auto";
     };
   }, [Toggle]);
+
   return (
     <div className="header">
       <div className="headerOne">
@@ -51,8 +52,8 @@ const Header = () => {
               }}
               className={`navbar-child ${
                 isActive == "Collections"
-                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)]"
-                  : "sm:border-transparent"
+                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)] duration-150"
+                  : "sm:border-transparent duration-150"
               }`}
             >
               Collections
@@ -65,8 +66,8 @@ const Header = () => {
               }}
               className={`navbar-child ${
                 isActive == "Men"
-                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)]"
-                  : "sm:border-transparent"
+                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)] duration-150"
+                  : "sm:border-transparent duration-150"
               }`}
             >
               Men
@@ -79,8 +80,8 @@ const Header = () => {
               }}
               className={`navbar-child ${
                 isActive == "Women"
-                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)]"
-                  : "sm:border-transparent"
+                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)] duration-150"
+                  : "sm:border-transparent duration-150"
               }`}
             >
               Women
@@ -93,8 +94,8 @@ const Header = () => {
               }}
               className={`navbar-child ${
                 isActive == "About"
-                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)]"
-                  : "sm:border-transparent"
+                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)] duration-150"
+                  : "sm:border-transparent duration-150"
               }`}
             >
               About
@@ -107,8 +108,8 @@ const Header = () => {
               }}
               className={`navbar-child ${
                 isActive == "Contact"
-                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)]"
-                  : "sm:border-transparent"
+                  ? "sm:border-b-[hsl(26,_100%,_55%)] text-[hsl(219,9%,45%)] duration-150"
+                  : "sm:border-transparent duration-150"
               }`}
             >
               Contact
