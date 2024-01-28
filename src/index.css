@@ -181,11 +181,11 @@
   .inputCheck input[type="number"] {
     @apply w-full sm:w-[34px];
     @apply bg-[hsl(223,_64%,_98%)];
-    @apply pl-24 sm:px-2;
+    @apply px-[90px] sm:px-2;
     @apply flex-grow-[8] sm:flex-grow-0;
   }
   .inputCheck input[type=button] {
-    @apply py-2 px-4;
+    @apply py-3 px-4;
     @apply font-bold;
     @apply text-[18px];
     @apply text-[hsl(26,100%,55%)];
@@ -196,10 +196,10 @@
     @apply bg-[hsl(26,100%,55%)]  text-[hsl(25,100%,94%)];
     @apply rounded-md;
     @apply  px-10;
-    @apply py-2;
+    @apply py-3;
     @apply my-2;
     @apply w-full sm:w-auto;
-    @apply shadow-xl shadow-[hsl(26,100%,55%)]/50;
+    @apply shadow-xl shadow-[hsl(26,100%,55%)]/30;
   }
   .submit img{
     /* @apply text-[linear-gradient(to_right,_#FFEDE0_50%,_#000_50%)]; */
