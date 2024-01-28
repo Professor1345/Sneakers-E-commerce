@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "KumbhSans": ['Kumbh Sans', 'sans-serif'],
+      },
+    },
     screens: {
       "2xs": "375px",
       xs: "480px",

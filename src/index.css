@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  * {
+    @apply box-border;
+  }
   /* 
     ////////////////
     HEADER
@@ -13,6 +18,7 @@
     @apply px-4 sm:px-0;
     @apply py-4 sm:py-0;
     @apply bg-white;
+    @apply sticky top-0 sm:static sm:top-auto;
   }
   .headerOne {
     @apply flex flex-col-reverse sm:flex-row;
@@ -77,28 +83,32 @@
     */
   .section {
     @apply flex flex-col sm:flex-row;
-    @apply my-16;
-    @apply bg-black/50;
+    /* @apply my-16; */
+    /* @apply bg-black/50; */
   }
   .sectionImage {
-    @apply flex-1
-    /* @apply basis-1/2; */
-    /* @apply */;
+    @apply flex-1;
+
+    @apply w-full sm:w-1/2;
+    @apply my-0 sm:my-8 sm:mx-8 md:my-14 md:mx-[62px];
+    @apply self-center;
   }
 
   .imageDisplay {
-    @apply rounded-2xl;
+    @apply rounded-none sm:rounded-2xl;
     @apply overflow-hidden;
-    @apply my-3;
+    @apply my-0 sm:my-6;
+    @apply flex-1;
+    @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto;
   }
   .imageButtonContainer {
-    @apply hidden sm:flex flex-row my-3;
+    @apply hidden sm:flex flex-row my-5;
   }
   .imageButton {
     @apply flex-1;
-    @apply mx-3;
+    @apply mr-6;
     @apply bg-black;
-    @apply rounded-2xl;
+    @apply rounded-lg;
     /* @apply size-[100px]; */
     /* @apply relative; */
     @apply overflow-hidden;
@@ -116,6 +126,91 @@
 
   .sectionDetails {
     @apply flex-1;
+    @apply bg-white;
     /* @apply basis-1/2; */
+    @apply py-2 sm:py-0 px-4 sm:px-0 m-0 sm:my-8 sm:mx-8 md:my-14 md:mx-[62px];
+    @apply w-full sm:w-1/2;
+    @apply self-auto sm:self-center;
+  }
+  .companyName {
+    @apply uppercase text-[hsl(26,100%,55%)] font-bold text-sm my-2;
+  }
+  .productDHeader {
+    @apply text-[hsl(220,13%,13%)] font-bold leading-[1] my-2 sm:my-[8px] md:my-3;
+    @apply text-[28px] leading-[2rem] sm:text-2xl md:text-4xl;
+  }
+  .productDetails {
+    @apply text-[hsl(219,9%,45%)] text-base sm:text-sm md:text-base;
+    @apply my-4 sm:my-3 md:my-5;
+  }
+  .productPrice {
+    @apply flex flex-row sm:flex-col;
+    @apply justify-between sm:justify-start;
+    @apply font-bold;
+    @apply my-2 sm:my-2 md:mt-2 md:mb-3;
+    @apply items-center sm:items-start;
+  }
+  .offerPricePercent {
+    @apply flex flex-row;
+    @apply items-center;
+  }
+  .offerPrice {
+    /* @apply  */
+    @apply text-[28px] leading-[2rem] sm:text-2xl md:text-3xl;
+  }
+  .pricePercentage {
+    /* @apply */
+    @apply text-[hsl(26,100%,55%)]  bg-[hsl(25,100%,94%)];
+    @apply text-sm px-2 py-1 my-2 mx-4;
+    @apply rounded-md;
+  }
+  .normalPrice {
+    @apply text-[hsl(219,9%,45%)] text-base sm:text-sm md:text-base line-through;
+  }
+  .inputCart {
+    @apply flex flex-wrap;
+  }
+  .inputCheck {
+    @apply flex flex-row;
+    @apply bg-[hsl(223,_64%,_98%)];
+    @apply rounded-md;
+    @apply my-2;
+    @apply mr-0 sm:mr-3;
+    @apply w-full sm:w-auto;
+  }
+  .inputCheck input[type="number"] {
+    @apply w-full sm:w-[34px];
+    @apply bg-[hsl(223,_64%,_98%)];
+    @apply pl-24 sm:px-2;
+    @apply flex-grow-[8] sm:flex-grow-0;
+  }
+  .inputCheck input[type=button] {
+    @apply py-2 px-4;
+    @apply font-bold;
+    @apply text-[18px];
+    @apply text-[hsl(26,100%,55%)];
+    @apply flex-grow-[1] sm:flex-grow-0;
+  }
+  .submit {
+    @apply flex items-center justify-center;
+    @apply bg-[hsl(26,100%,55%)]  text-[hsl(25,100%,94%)];
+    @apply rounded-md;
+    @apply  px-10;
+    @apply py-2;
+    @apply my-2;
+    @apply w-full sm:w-auto;
+    @apply shadow-xl shadow-[hsl(26,100%,55%)]/50;
+  }
+  .submit img{
+    /* @apply text-[linear-gradient(to_right,_#FFEDE0_50%,_#000_50%)]; */
+    /* @apply fill-white !important; */
+    @apply brightness-[1.1];
+    @apply size-[18px];
+
+  }
+
+  .submit span{
+    @apply px-2;
+    @apply text-nowrap;
   }
 }
