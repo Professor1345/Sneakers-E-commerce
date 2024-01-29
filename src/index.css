@@ -84,7 +84,7 @@
   }
   .empty {
     @apply flex justify-center items-center;
-    @apply sm:min-h-[144px] sm:min-w-[296.11px] md:min-h-[152px] md:min-w-[322.02px];
+    @apply min-h-[163.5px] 2xs:min-h-[230px] xs:min-h-[250px] sm:min-h-[144px] sm:min-w-[296.11px] md:min-h-[152px] md:min-w-[322.02px];
   }
 
   .checkout {
