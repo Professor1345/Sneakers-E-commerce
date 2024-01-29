@@ -27,6 +27,23 @@ const Section = () => {
   const handleChange = (event) =>
     setNumberChange(event.target.value.slice(0, 2));
 
+  // Adding to Cart Button
+  const cartButton = () => {
+    setNumberChange(0);
+    numberChange >= 1
+      ? localStorage.getItem("items") == undefined
+        ? localStorage.setItem("items", numberChange)
+        : null
+      : null;
+
+    localStorage.setItem(
+      "items",
+      Number(numberChange) + Number(localStorage.getItem("items"))
+    );
+  };
+  // useEffect(() =>{
+  //   localStorage.setItem("items", 0)
+  // },[]);
   return (
     <div className="section">
       <div className="sectionImage">
@@ -151,16 +168,16 @@ const Section = () => {
             />
             <input type="button" onClick={numberPlus} value="+" />
           </div>
-          <button type="submit" className="submit">
+          <button type="submit" onClick={cartButton} className="submit">
             <img src={cart} alt="cart" />
             <span>Add to cart</span>
           </button>
         </div>
+        <div id="output"></div>
         {/* <div className="text-lg">
           <div>Fall Limited Edition Sneakers</div>
           <div><span>$125.00</span> X <span id="output">{}</span> <span>{125.00 * }</span></div>
         </div> */}
-        
       </div>
 
       {/* <div>

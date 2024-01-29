@@ -37,7 +37,7 @@
     @apply fixed  top-0 -left-[60%]  w-[60%] h-screen sm:w-auto sm:h-auto sm:static bg-white sm:bg-transparent;
     @apply mx-0 sm:mx-2 md:mx-6;
     @apply p-5 sm:p-0;
-    @apply duration-150;
+    /* @apply duration-150; */
   }
   .navbar {
     @apply flex flex-col sm:flex-row text-[hsl(220,14%,75%)];
@@ -47,24 +47,55 @@
   .navbar-child {
     @apply mx-0 sm:mx-[10px] md:mx-[14px];
     @apply text-base sm:text-sm md:text-base;
-    @apply py-2 sm:py-3 md:py-6;
+    @apply py-2 sm:py-5 md:py-[26px];
     @apply font-semibold;
     @apply sm:border-y-[4px] sm:border-solid sm:border-transparent;
     /* @apply focus:sm:border-b-[hsl(26,_100%,_55%)]; */
     @apply text-left sm:text-center;
-    @apply hover:text-[hsl(219,9%,45%)] duration-150;
+    @apply hover:text-[hsl(219,9%,45%)] hover:duration-150;
   }
 
   .headerTwo {
     @apply flex flex-row items-center;
   }
-  .cart {
-    @apply flex rounded-full cursor-pointer mx-4;
+  .cart-button {
+    @apply flex rounded-full cursor-pointer mx-4 sm:mx-5 lg:mx-6;
     /* @apply sm:border-[2px] sm:border-solid sm:border-transparent; */
     /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
     /* @apply focus:sm:border-[hsl(26,_100%,_55%)]; */
     /* @apply hover:sm:border-[hsl(26,_100%,_55%)]; */
-    @apply hover:invert duration-150;
+    @apply hover:invert hover:duration-150;
+  }
+
+  .cart {
+    @apply fixed top-20 sm:top-[65px] md:top-[75px];
+    @apply shrink;
+    @apply bg-white;
+    /* @apply w-full sm:w-auto; */
+    @apply right-[16px] left-[16px] sm:right-12 md:right-20 sm:left-auto;
+    @apply rounded-lg;
+    @apply shadow-lg shadow-black/10 drop-shadow-lg;
+    /* @apply mx-4 sm:mx-0; */
+    /* @apply ; */
+    /* @apply inline-flex flex-col; */
+  }
+  .cart-content {
+    @apply py-4 px-5;
+  }
+  .empty {
+    @apply flex justify-center items-center;
+    @apply sm:min-h-[144px] sm:min-w-[296.11px] md:min-h-[152px] md:min-w-[322.02px];
+  }
+
+  .checkout {
+    @apply flex items-center justify-center;
+    @apply bg-[hsl(26,100%,55%)]  text-[hsl(25,100%,94%)];
+    @apply rounded-md;
+    @apply px-10;
+    @apply py-3;
+    @apply my-2 lg:my-3;
+    @apply w-full;
+    @apply hover:opacity-50 hover:duration-150;
   }
   .user {
     @apply size-8 sm:size-9;
@@ -72,8 +103,8 @@
 
     @apply border-[2px] border-solid border-transparent;
     /* @apply active:sm:border-[hsl(26,_100%,_55%)]; */
-    @apply focus:border-[hsl(26,_100%,_55%)] duration-150;
-    @apply hover:border-[hsl(26,_100%,_55%)] duration-150;
+    @apply focus:border-[hsl(26,_100%,_55%)] focus:duration-150;
+    @apply hover:border-[hsl(26,_100%,_55%)] hover:duration-150;
   }
 
   /* 
@@ -197,7 +228,7 @@
     @apply flex-grow-[1] sm:flex-grow-0 sm:shrink-0;
     /* @apply flex items-center my-auto; */
     @apply w-[20%] sm:w-[33.33%];
-    @apply hover:opacity-50 duration-150;
+    @apply hover:opacity-50 hover:duration-150;
   }
   .submit {
     @apply flex items-center justify-center;
@@ -208,7 +239,7 @@
     @apply my-2 lg:my-3;
     @apply w-full sm:w-[60%];
     @apply shadow-xl shadow-[hsl(26,100%,55%)]/30;
-    @apply hover:opacity-50 duration-150;
+    @apply hover:opacity-50 hover:duration-150;
   }
   .submit img {
     /* @apply text-[linear-gradient(to_right,_#FFEDE0_50%,_#000_50%)]; */
