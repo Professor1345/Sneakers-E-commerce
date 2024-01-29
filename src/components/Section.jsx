@@ -3,6 +3,9 @@
 import {
   cart,
   product01,
+  product02,
+  product03,
+  product04,
   productThumb01,
   productThumb02,
   productThumb03,
@@ -11,35 +14,48 @@ import {
 
 import { useState } from "react";
 
-const Section = () => {
+// eslint-disable-next-line react/prop-types
+const Section = ({ setInputNumberCart }) => {
   const [numberChange, setNumberChange] = useState(0);
+  // const [addCart, setAddCart] = useState("");
   const [buttonActive, setButtonActive] = useState("productOne");
   const numberPlus = () => {
-    Number(numberChange) <= 98
+    Number(numberChange) < 100
       ? setNumberChange(Number(numberChange) + 1)
-      : setNumberChange(99);
+      : setNumberChange(100);
   };
   const numberMinus = () => {
-    Number(numberChange) >= 1
+    Number(numberChange) > 0
       ? setNumberChange(Number(numberChange) - 1)
       : setNumberChange(0);
   };
   const handleChange = (event) =>
-    setNumberChange(event.target.value.slice(0, 2));
+    setNumberChange(
+      event.target.value <= 100
+        ? event.target.value
+        : (event.target.value = 100)
+    );
 
   // Adding to Cart Button
-  const cartButton = () => {
-    setNumberChange(0);
-    numberChange >= 1
-      ? localStorage.getItem("items") == undefined
+  const addCartButton = () => {
+    numberChange >= 1 && numberChange <= 100
+      ? localStorage.getItem("items") == null
         ? localStorage.setItem("items", numberChange)
-        : null
+        : localStorage.setItem(
+            "items",
+            Number(numberChange) + Number(localStorage.getItem("items"))
+            // <= 100
+            //   ? Number(numberChange) + Number(localStorage.getItem("items"))
+            //   : localStorage.getItem("items")
+          )
       : null;
 
-    localStorage.setItem(
-      "items",
-      Number(numberChange) + Number(localStorage.getItem("items"))
-    );
+    // localStorage.setItem(
+    //   "items",
+    //   Number(numberChange) + Number(localStorage.getItem("items"))
+    // );
+    setInputNumberCart(localStorage.getItem("items"));
+    setNumberChange(0);
   };
   // useEffect(() =>{
   //   localStorage.setItem("items", 0)
@@ -51,13 +67,34 @@ const Section = () => {
           <img
             src={product01}
             alt="product01"
-            className="size-full object-cover"
+            id="product01"
+            className=" min-h-full object-cover product01"
+          />
+          <img
+            src={product02}
+            alt="product02"
+            id="product02"
+            className="min-h-full object-cover product02"
+          />
+          <img
+            src={product03}
+            alt="product03"
+            id="product03"
+            className="min-h-full object-cover product03"
+          />
+          <img
+            src={product04}
+            alt="product04"
+            id="product04"
+            className="min-h-full object-cover product04"
           />
         </div>
         <div className="imageButtonContainer">
-          <div
+          <a
+            href="#product01"
             onClick={() => {
               setButtonActive("productOne");
+              // document.getElementsByClassName("product01")[0].style
             }}
             className={`imageButton ${
               buttonActive == "productOne"
@@ -74,9 +111,10 @@ const Section = () => {
                   : "hover:opacity-50 duration-150"
               }`}
             />
-          </div>
+          </a>
 
-          <div
+          <a
+            href="#product02"
             onClick={() => {
               setButtonActive("productTwo");
             }}
@@ -95,9 +133,10 @@ const Section = () => {
                   : "hover:opacity-50 duration-150"
               }`}
             />
-          </div>
+          </a>
 
-          <div
+          <a
+            href="#product03"
             onClick={() => {
               setButtonActive("productThree");
             }}
@@ -116,8 +155,9 @@ const Section = () => {
                   : "hover:opacity-50 duration-150"
               }`}
             />
-          </div>
-          <div
+          </a>
+          <a
+            href="#product04"
             onClick={() => {
               setButtonActive("productFour");
             }}
@@ -136,7 +176,7 @@ const Section = () => {
                   : "hover:opacity-50"
               }`}
             />
-          </div>
+          </a>
         </div>
       </div>
       <div className="sectionDetails">
@@ -161,19 +201,19 @@ const Section = () => {
               type="number"
               name="number"
               min="0"
-              max="99"
+              max="100"
               value={numberChange}
               id=""
               onChange={handleChange}
             />
             <input type="button" onClick={numberPlus} value="+" />
           </div>
-          <button type="submit" onClick={cartButton} className="submit">
+          <button type="submit" onClick={addCartButton} className="submit">
             <img src={cart} alt="cart" />
             <span>Add to cart</span>
           </button>
         </div>
-        <div id="output"></div>
+        {/* <div id="output">{ localStorage.getItem("items")}</div> */}
         {/* <div className="text-lg">
           <div>Fall Limited Edition Sneakers</div>
           <div><span>$125.00</span> X <span id="output">{}</span> <span>{125.00 * }</span></div>

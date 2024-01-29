@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 
 import { avatar, cart, close, logo, menu, product01, remove } from "../assets";
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ inputNumberCart, setInputNumberCart }) => {
   const [Toggle, setToggle] = useState(false);
   const [isActive, setIsActive] = useState("");
   const [isCart, setIsCart] = useState(false);
-  const [addCart, setAddCart] = useState(0);
+  // useEffect(() => {
+  //   localStorage.getItem("items")
+  // },[localStorage.getItem("items")])
+
+  // const [addCart, setAddCart] = useState(0);
   useEffect(() => {
     document.body.style.overflow = Toggle ? "hidden" : "auto";
-
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -123,24 +127,57 @@ const Header = () => {
           onClick={() => setIsCart((open) => !open)}
           className={`cart-button ${isCart ? "invert" : "invert-0"}`}
         >
-          <img src={cart} className="hover:fill-transparent" alt="cart" />
-        </div>
-        <div className={`cart ${isCart? "block": "hidden"}`}>
-          <div className="py-4 px-5 font-bold text-[hsl(220,_13%,_13%)]">Cart</div>
-          <hr />
-          {addCart >= 1 ? <div className="cart-content">
-            <div className="flex flex-row items-center justify-between text-[15px] 2xs:text-base sm:text-sm md:text-base">
-              <div className="overflow-hidden h-[3rem] w-[2.8rem]"><img src={product01} alt="product" className="size-full" /></div>
-              <div className="mx-2">
-                <div>Fall Limited Edition Sneakers</div>
-                <div>$125.00 X <span>3</span> <span className="font-bold">$375.00</span></div>
-              </div>
-              <div className="self-center"><img src={remove} alt="delete" className="size-full" /></div>
-            </div>
-            <div className="checkout">Checkout</div>
+          <img src={cart} className="hover:fill-transparent" alt="cart" />{" "}
+          <div
+            className={`notification ${
+              inputNumberCart == undefined ? "hidden" : "block"
+            } ${
+              inputNumberCart >= 100
+                ? "left-2 text-[10px]"
+                : "left-3 sm:left-2 text-xs"
+            } ${isCart ? "invert" : "invert-0"}`}
+          >
+            {Number(inputNumberCart) >= 100 ? "99+" : inputNumberCart}
           </div>
-          :
-          <div className="empty"><div className="text-[hsl(219,9%,45%)] font-bold">Your cart is empty.</div></div>}
+        </div>
+        <div className={`cart ${isCart ? "block" : "hidden"}`}>
+          <div className="py-4 px-5 font-bold text-[hsl(220,_13%,_13%)]">
+            Cart
+          </div>
+          <hr />
+          {inputNumberCart != undefined ? (
+            <div className="cart-content">
+              <div className="flex flex-row items-center justify-between text-[15px] 2xs:text-base sm:text-sm md:text-base">
+                <div className="overflow-hidden h-[3rem] w-[2.8rem]">
+                  <img src={product01} alt="product" className="size-full" />
+                </div>
+                <div className="mx-2">
+                  <div>Fall Limited Edition Sneakers</div>
+                  <div>
+                    $125.00 X <span>{inputNumberCart}</span>{" "}
+                    <span className="font-bold">
+                      ${(125 * inputNumberCart).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+                <button
+                  className="self-center cursor-pointer"
+                  onClick={() =>
+                    setInputNumberCart(localStorage.removeItem("items"))
+                  }
+                >
+                  <img src={remove} alt="delete" className="size-full hover:brightness-50" />
+                </button>
+              </div>
+              <div className="checkout">Checkout</div>
+            </div>
+          ) : (
+            <div className="empty">
+              <div className="text-[hsl(219,9%,45%)] font-bold">
+                Your cart is empty.
+              </div>
+            </div>
+          )}
         </div>
 
         <button className="user">
