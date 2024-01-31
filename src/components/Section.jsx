@@ -35,21 +35,8 @@ const Section = ({ setInputNumberCart }) => {
         productThree.style.left = "0%";
         // productThree.style.zIndex = "-1";
 
-        productFour.style.left = "-400%";
+        productFour.style.left = "0%";
 
-        //Z zIndex
-        productOne.style.zIndex = "0";
-        productTwo.style.zIndex = "0";
-        productThree.style.zIndex = "-1";
-        productFour.style.zIndex = "-2";
-        productFour.style.visibility = "hidden";
-
-        // for (const iterator of imageProduct) {
-        //   if (iterator.id === 'product01') {
-        //     iterator.style.zIndex = "0";
-        //     continue;}
-        //   iterator.style.zIndex = "-1";
-        // }
         break;
       case 2:
         productOne.style.left = "-100%";
@@ -58,18 +45,6 @@ const Section = ({ setInputNumberCart }) => {
         productFour.style.left = "-100%";
         // productFour.style.zIndex = "-1";
 
-        //Z zIndex
-        productOne.style.zIndex = "-1";
-        productTwo.style.zIndex = "0";
-        productThree.style.zIndex = "-1";
-        productFour.style.zIndex = "-2";
-
-        // for (const iterator of imageProduct) {
-        //   if (iterator.id === 'product02') {
-        //     iterator.style.zIndex = "0";
-        //     continue;}
-        //   iterator.style.zIndex = "-1";
-        // }
         break;
       case 3:
         productOne.style.left = "-200%";
@@ -78,39 +53,14 @@ const Section = ({ setInputNumberCart }) => {
         productThree.style.left = "-200%";
         productFour.style.left = "-200%";
 
-        //Z zIndex
-        productOne.style.zIndex = "-2";
-        productTwo.style.zIndex = "-1";
-        productThree.style.zIndex = "0";
-        productFour.style.zIndex = "-1";
-        productFour.style.visibility = "hidden";
-        // for (const iterator of imageProduct) {
-        //   if (iterator.id === 'product03') {
-        //     iterator.style.zIndex = "0";
-        //     continue;}
-        //   iterator.style.zIndex = "-1";
-        // }
         break;
       case 4:
-        productOne.style.left = "100%";
+        productOne.style.left = "-300%";
         productTwo.style.left = "-300%";
         // productTwo.style.zIndex = "-1";
 
         productThree.style.left = "-300%";
         productFour.style.left = "-300%";
-
-        //Z zIndex
-        productOne.style.zIndex = "-2";
-        productTwo.style.zIndex = "-1";
-        productThree.style.zIndex = "-1";
-        productFour.style.zIndex = "0";
-        productFour.style.visibility = "visible";
-        // for (const iterator of imageProduct) {
-        //   if (iterator.id === 'product04') {
-        //     iterator.style.zIndex = "0";
-        //     continue;}
-        //   iterator.style.zIndex = "-1";
-        // }
         break;
       default:
         //DEFAULT

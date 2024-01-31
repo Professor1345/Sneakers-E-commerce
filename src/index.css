@@ -149,7 +149,7 @@
     @apply flex-1;
     @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto;
     @apply flex;
-    @apply relative
+    @apply relative -z-10;
     /* @apply overflow-x-auto */;
   }
   .imageDisplay img {
@@ -168,7 +168,7 @@
     @apply left-[0%];
   }
   .imageDisplay img:nth-child(4) {
-    @apply -left-[400%];
+    @apply -left-[0%];
   }
 
   .imageButtonContainer {
