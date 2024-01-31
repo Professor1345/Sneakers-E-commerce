@@ -20,6 +20,7 @@
     @apply py-4 sm:py-0;
     @apply bg-white;
     @apply sticky top-0 sm:static sm:top-auto;
+    @apply z-30;
   }
   .headerOne {
     @apply flex flex-col-reverse sm:flex-row;
@@ -85,6 +86,7 @@
   .cart {
     @apply fixed top-20 sm:top-[65px] md:top-[75px];
     @apply shrink;
+    /* @apply z-50; */
     @apply bg-white;
     /* @apply w-full sm:w-auto; */
     @apply right-[16px] left-[16px] sm:right-12 md:right-20 sm:left-auto;
@@ -134,23 +136,94 @@
     /* @apply my-16; */
     /* @apply bg-black/50; */
   }
-  .sectionImage {
+  .sectionImage:nth-child(1) {
     @apply flex-1;
-
+/* @apply bg-slate-600; */
     @apply w-full sm:w-1/2;
     @apply my-0 sm:my-8 sm:mx-8 md:my-14 md:mx-[62px];
     @apply self-center;
   }
 
-  .imageDisplay {
+  .sectionImage:nth-child(1) .imageDisToolCont {
     @apply rounded-none sm:rounded-2xl;
-    @apply overflow-hidden;
+    /* @apply overflow-hidden; */
     @apply my-0 sm:my-6;
     @apply flex-1;
     @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto;
     @apply flex;
+    @apply relative;
+    @apply  duration-0 cursor-auto sm:cursor-pointer;  
+    /* @apply overflow-x-auto */
+  }
+
+  .sectionImage:nth-child(1) .imageDisToolCont .imageDisplay {
+    @apply rounded-none sm:rounded-2xl;
+    @apply overflow-hidden;
+    /* @apply my-0 sm:my-6; */
+    @apply flex-1;
+    @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto;
+    @apply flex;
+    @apply relative;
+    /* @apply z-[1]; */
+    /* @apply -z sm:z-0; */
+    /* @apply  duration-0 cursor-pointer;   */
+    /* @apply overflow-x-auto */
+  }
+
+  /* .sectionImage:nth-child(1) .imageDisplay > img{
+    @apply hover:opacity-30 duration-150;  
+} */
+
+  /* Overflow Product Image */
+  .sectionImage:nth-child(2) {
+    /* @apply flex-1; */
+
+    @apply left-0 duration-[10] fixed w-full h-screen top-0 z-[1] bg-black/60;
+    @apply justify-center items-center;
+    /* @apply hidden sm:block;
+    @apply w-[35%] h-screen overflow-auto; 
+    @apply fixed;
+    @apply my-0 sm:my-8 sm:mx-8 md:my-14 md:mx-[62px];
+    @apply self-center;
+    @apply z-[2];
+    @apply top-0; */
+
+    /* @apply bg-black; */
+  }
+
+  .sectionImage:nth-child(2) .sectionImageOver {
+
+    /* @apply hidden sm:block; */
+
+    @apply w-[33%]; 
+    /* @apply fixed; */
+    @apply my-0 sm:my-8 sm:mx-8 md:my-14 md:mx-[62px];
+    @apply self-center;
+    @apply z-[2];
+    /* @apply top-0; */
+
+    /* @apply bg-black; */
+  }
+  .sectionImage:nth-child(2) .sectionImageOver .imageDisToolCont {
+    /* @apply rounded-none sm:rounded-2xl; */
+    /* @apply overflow-hidden; */
+    @apply my-0 sm:my-6;
+    @apply flex-1;
+    /* @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto; */
+    /* @apply flex; */
     @apply relative -z-10;
-    /* @apply overflow-x-auto */;
+    /* @apply overflow-x-auto */
+  }
+
+  .sectionImage:nth-child(2) .sectionImageOver .imageDisToolCont .imageDisplay {
+    @apply rounded-none sm:rounded-2xl;
+    @apply overflow-hidden;
+    @apply my-0 sm:my-6;
+    @apply flex-1;
+    /* @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto; */
+    @apply flex;
+    @apply relative -z-10;
+    /* @apply overflow-x-auto */
   }
   .imageDisplay img {
     @apply min-w-full sm:w-auto;
@@ -191,12 +264,12 @@
     /* @apply rounded-; */
     /* @apply hover:opacity-50 duration-150; */
   }
-  .imageButton:first-child {
+  /* .imageButton:first-child {
     @apply ml-0;
   }
   .imageButton:last-child {
     @apply mr-0;
-  }
+  } */
 
   .sectionDetails {
     @apply flex-1;
