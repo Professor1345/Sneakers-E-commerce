@@ -72,9 +72,13 @@
   }
 
   .notification {
-    @apply absolute -top-2 z-[3]  px-1 sm:px-[6px] text-[12px];
+    @apply absolute -top-2 z-[3]  px-1 sm:px-[6px];
     @apply bg-[hsl(26,100%,55%)]  text-[hsl(25,100%,94%)];
     @apply rounded-xl;
+    @apply my-auto;
+    @apply self-center;
+    @apply align-middle;
+    @apply flex items-center justify-center;
     /* @apply hover:bg-[hsl(26,100%,55%)]/50; */
   }
 
@@ -145,11 +149,28 @@
     @apply flex-1;
     @apply h-[250px] 2xs:h-[330px] xs:h-[350px] ss:h-[500px] sm:h-auto;
     @apply flex;
-    /* @apply overflow-x-auto */
+    @apply relative
+    /* @apply overflow-x-auto */;
   }
-  .imageDisplay img{
+  .imageDisplay img {
     @apply min-w-full sm:w-auto;
+    @apply relative;
+    @apply duration-1000;
   }
+
+  .imageDisplay img:nth-child(1) {
+    @apply left-[0%];
+  }
+  .imageDisplay img:nth-child(2) {
+    @apply left-[0%];
+  }
+  .imageDisplay img:nth-child(3) {
+    @apply left-[0%];
+  }
+  .imageDisplay img:nth-child(4) {
+    @apply -left-[400%];
+  }
+
   .imageButtonContainer {
     @apply hidden sm:flex flex-row my-5;
   }

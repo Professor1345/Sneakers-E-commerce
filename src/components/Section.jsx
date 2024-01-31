@@ -2,6 +2,8 @@
 
 import {
   cart,
+  next,
+  previous,
   product01,
   product02,
   product03,
@@ -12,13 +14,114 @@ import {
   productThumb04,
 } from "../assets";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Section = ({ setInputNumberCart }) => {
   const [numberChange, setNumberChange] = useState(0);
   // const [addCart, setAddCart] = useState("");
-  const [buttonActive, setButtonActive] = useState("productOne");
+  const [productDisplay, setProductDisplay] = useState(1);
+  useEffect(() => {
+    let productOne = document.getElementById("product01");
+    let productTwo = document.getElementById("product02");
+    let productThree = document.getElementById("product03");
+    let productFour = document.getElementById("product04");
+    // let imageProduct = document.querySelectorAll(".imageDisplay img");
+
+    switch (productDisplay) {
+      case 1:
+        productOne.style.left = "0%";
+        productTwo.style.left = "0%";
+        productThree.style.left = "0%";
+        // productThree.style.zIndex = "-1";
+
+        productFour.style.left = "-400%";
+
+        //Z zIndex
+        productOne.style.zIndex = "0";
+        productTwo.style.zIndex = "0";
+        productThree.style.zIndex = "-1";
+        productFour.style.zIndex = "-2";
+        productFour.style.visibility = "hidden";
+
+        // for (const iterator of imageProduct) {
+        //   if (iterator.id === 'product01') {
+        //     iterator.style.zIndex = "0";
+        //     continue;}
+        //   iterator.style.zIndex = "-1";
+        // }
+        break;
+      case 2:
+        productOne.style.left = "-100%";
+        productTwo.style.left = "-100%";
+        productThree.style.left = "-100%";
+        productFour.style.left = "-100%";
+        // productFour.style.zIndex = "-1";
+
+        //Z zIndex
+        productOne.style.zIndex = "-1";
+        productTwo.style.zIndex = "0";
+        productThree.style.zIndex = "-1";
+        productFour.style.zIndex = "-2";
+
+        // for (const iterator of imageProduct) {
+        //   if (iterator.id === 'product02') {
+        //     iterator.style.zIndex = "0";
+        //     continue;}
+        //   iterator.style.zIndex = "-1";
+        // }
+        break;
+      case 3:
+        productOne.style.left = "-200%";
+        productTwo.style.left = "-200%";
+        // productTwo.style.zIndex = "-1";
+        productThree.style.left = "-200%";
+        productFour.style.left = "-200%";
+
+        //Z zIndex
+        productOne.style.zIndex = "-2";
+        productTwo.style.zIndex = "-1";
+        productThree.style.zIndex = "0";
+        productFour.style.zIndex = "-1";
+        productFour.style.visibility = "hidden";
+        // for (const iterator of imageProduct) {
+        //   if (iterator.id === 'product03') {
+        //     iterator.style.zIndex = "0";
+        //     continue;}
+        //   iterator.style.zIndex = "-1";
+        // }
+        break;
+      case 4:
+        productOne.style.left = "100%";
+        productTwo.style.left = "-300%";
+        // productTwo.style.zIndex = "-1";
+
+        productThree.style.left = "-300%";
+        productFour.style.left = "-300%";
+
+        //Z zIndex
+        productOne.style.zIndex = "-2";
+        productTwo.style.zIndex = "-1";
+        productThree.style.zIndex = "-1";
+        productFour.style.zIndex = "0";
+        productFour.style.visibility = "visible";
+        // for (const iterator of imageProduct) {
+        //   if (iterator.id === 'product04') {
+        //     iterator.style.zIndex = "0";
+        //     continue;}
+        //   iterator.style.zIndex = "-1";
+        // }
+        break;
+      default:
+        //DEFAULT
+        // productOne.style.left = "0%";
+        // productTwo.style.left = "0%";
+        // productThree.style.left = "0%";
+        // productFour.style.left = "-400%";
+        break;
+    }
+  }, [productDisplay]);
+  // const [buttonActive, setButtonActive] = useState("productOne");
   const numberPlus = () => {
     Number(numberChange) < 100
       ? setNumberChange(Number(numberChange) + 1)
@@ -68,24 +171,165 @@ const Section = ({ setInputNumberCart }) => {
             src={product01}
             alt="product01"
             id="product01"
-            className=" min-h-full object-cover product01"
+            className=" min-h-full object-cover"
           />
           <img
             src={product02}
             alt="product02"
             id="product02"
-            className="min-h-full object-cover product02"
+            className="min-h-full object-cover"
           />
           <img
             src={product03}
             alt="product03"
             id="product03"
-            className="min-h-full object-cover product03"
+            className="min-h-full object-cover"
           />
           <img
             src={product04}
             alt="product04"
             id="product04"
+            className="min-h-full object-cover"
+          />
+        </div>
+        <div className="imageButtonContainer">
+          <a
+            // href="#product01"
+            onClick={() => {
+              setProductDisplay(1);
+              // document.getElementsByClassName("product01")[0].style
+            }}
+            className={`imageButton ${
+              productDisplay == 1
+                ? "border-[hsl(26,_100%,_55%)]"
+                : "border-transparent"
+            }`}
+          >
+            <img
+              src={productThumb01}
+              alt="productThumb01"
+              className={`size-full ${
+                productDisplay == 1
+                  ? "opacity-30 hover:opacity-30 duration-150"
+                  : "hover:opacity-50 duration-150"
+              }`}
+            />
+          </a>
+
+          <a
+            // href="#product02"
+            onClick={() => {
+              setProductDisplay(2);
+            }}
+            className={`imageButton ${
+              productDisplay == 2
+                ? "border-[hsl(26,_100%,_55%)]"
+                : "border-transparent"
+            }`}
+          >
+            <img
+              src={productThumb02}
+              alt="productThumb01"
+              className={`size-full ${
+                productDisplay == 2
+                  ? "opacity-30 hover:opacity-30 duration-150"
+                  : "hover:opacity-50 duration-150"
+              }`}
+            />
+          </a>
+
+          <a
+            // href="#product03"
+            onClick={() => {
+              setProductDisplay(3);
+            }}
+            className={`imageButton ${
+              productDisplay == 3
+                ? "border-[hsl(26,_100%,_55%)] duration-150"
+                : "border-transparent duration-150"
+            } `}
+          >
+            <img
+              src={productThumb03}
+              alt="productThumb03"
+              className={`size-full ${
+                productDisplay == 3
+                  ? "opacity-30 hover:opacity-30 duration-150"
+                  : "hover:opacity-50 duration-150"
+              }`}
+            />
+          </a>
+          <a
+            // href="#product04"
+            onClick={() => {
+              setProductDisplay(4);
+            }}
+            className={`imageButton ${
+              productDisplay == 4
+                ? "border-[hsl(26,_100%,_55%)]"
+                : "border-transparent"
+            }`}
+          >
+            <img
+              src={productThumb04}
+              alt="productThumb04"
+              className={`size-full ${
+                productDisplay == 4
+                  ? "opacity-30 hover:opacity-30 duration-150"
+                  : "hover:opacity-50"
+              }`}
+            />
+          </a>
+        </div>
+        <div className="flex justify-center">
+          <button
+            onClick={() =>
+              setProductDisplay((minus) => {
+                return minus == 1 ? minus + 3 : minus - 1;
+              })
+            }
+          >
+            <img src={previous} alt="<" className="mx-2 p-4 bg-slate-400" />
+          </button>
+          <button
+            onClick={() =>
+              setProductDisplay((plus) => {
+                return plus == 4 ? plus - 3 : plus + 1;
+              })
+            }
+          >
+            <img src={next} alt=">" className="mx-2 p-4 bg-slate-400" />
+          </button>
+        </div>
+        {/* <div>{productDisplay}</div> */}
+      </div>
+
+      {/* Overflow Product Image */}
+      {/* 
+      <div className="sectionImage">
+        <div className="imageDisplay">
+          <img
+            src={product01}
+            alt="product01"
+            id="product011"
+            className=" min-h-full object-cover product01"
+          />
+          <img
+            src={product02}
+            alt="product02"
+            id="product022"
+            className="min-h-full object-cover product02"
+          />
+          <img
+            src={product03}
+            alt="product03"
+            id="product033"
+            className="min-h-full object-cover product03"
+          />
+          <img
+            src={product04}
+            alt="product04"
+            id="product044"
             className="min-h-full object-cover product04"
           />
         </div>
@@ -178,7 +422,8 @@ const Section = ({ setInputNumberCart }) => {
             />
           </a>
         </div>
-      </div>
+      </div> */}
+
       <div className="sectionDetails">
         <div className="companyName">Sneaker Company</div>
         <div className="productDHeader">Fall Limited Edition Sneakers</div>

@@ -156,17 +156,28 @@ const Header = ({ inputNumberCart, setInputNumberCart }) => {
                   <div>
                     $125.00 X <span>{inputNumberCart}</span>{" "}
                     <span className="font-bold">
-                      ${(125 * inputNumberCart).toFixed(2)}
+                      {/* Display Total Prices */}$
+                      {(125 * inputNumberCart).toFixed(2)}
+                      {/*Set Total Price to localStorage */}
+                      {localStorage.setItem(
+                        "total-price",
+                        (125 * inputNumberCart).toFixed(2)
+                      )}
                     </span>
                   </div>
                 </div>
                 <button
                   className="self-center cursor-pointer"
-                  onClick={() =>
-                    setInputNumberCart(localStorage.removeItem("items"))
-                  }
+                  onClick={() => {
+                    setInputNumberCart(localStorage.removeItem("items"));
+                    {localStorage.removeItem("total-price");}
+                  }}
                 >
-                  <img src={remove} alt="delete" className="size-full hover:brightness-50" />
+                  <img
+                    src={remove}
+                    alt="delete"
+                    className="size-full hover:brightness-5"
+                  />
                 </button>
               </div>
               <div className="checkout">Checkout</div>
