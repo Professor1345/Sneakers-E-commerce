@@ -176,7 +176,7 @@ const Header = ({ inputNumberCart, setInputNumberCart }) => {
                   <img
                     src={remove}
                     alt="delete"
-                    className="size-full hover:brightness-5"
+                    className="size-full hover:invert"
                   />
                 </button>
               </div>

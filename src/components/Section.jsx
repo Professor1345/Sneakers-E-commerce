@@ -163,24 +163,24 @@ const Section = ({ setInputNumberCart }) => {
         <div className="imageDisToolCont">
         <div className="flex sm:hidden justify-between w-full h-full absolute  ">
               <button
-                className="self-center left-4 relative rounded-full overflow-hidden bg-white z-[1]"
+                className="self-center left-4 relative rounded-full overflow-hidden bg-white z-[1] hover:invert-[100%] brightness-200"
                 onClick={() =>
                   setProductDisplay((minus) => {
                     return minus == 1 ? minus + 3 : minus - 1;
                   })
                 }
               >
-                <img src={previous} alt="<" className="py-[10px] pl-[10px] pr-[13px] max-w-[95%] " />
+                <img src={previous} alt="<" className="py-[10px] pl-[10px] pr-[13px] max-w-[100%] " />
               </button>
               <button
-                className="self-center right-4 relative rounded-full overflow-hidden bg-white z-[1]"
+                className="self-center right-4 relative rounded-full overflow-hidden bg-white z-[1] hover:invert-[100%] brightness-200"
                 onClick={() =>
                   setProductDisplay((plus) => {
                     return plus == 4 ? plus - 3 : plus + 1;
                   })
                 }
               >
-                <img src={next} alt=">" className="py-[10px] pl-[13px] pr-[10px] max-w-[95%]" />
+                <img src={next} alt=">" className="py-[10px] pl-[13px] pr-[10px] max-w-[100%] hover:fill-yellow-700" />
               </button>
             </div>
           <div
@@ -336,19 +336,18 @@ const Section = ({ setInputNumberCart }) => {
         }`}
       >
         <div className="sectionImageOver">
-          <div className="flex justify-end">
-            <div></div>
+          <div className="flex justify-end mt-5">
             <img
               src={close}
               alt="X"
               onClick={() => setShowProductOver(false)}
-              className=" brightness-[300%] hover:saturate-[8] size-[6%] cursor-pointer"
+              className=" brightness-[300%] hover:invert-[0.2] size-[6%] cursor-pointer"
             />
           </div>
           <div className="imageDisToolCont">
             <div className="flex justify-between w-full h-full absolute ">
               <button
-                className="self-center -left-6 relative rounded-full overflow-hidden bg-white"
+                className="self-center -left-6 relative rounded-full overflow-hidden bg-white hover:invert-[100%] brightness-200"
                 onClick={() =>
                   setProductDisplay((minus) => {
                     return minus == 1 ? minus + 3 : minus - 1;
@@ -358,14 +357,14 @@ const Section = ({ setInputNumberCart }) => {
                 <img src={previous} alt="<" className="py-4 px-[18px]" />
               </button>
               <button
-                className="self-center -right-6 relative rounded-full overflow-hidden bg-white"
+                className="self-center -right-6 relative rounded-full overflow-hidden bg-white hover:invert-[100%] brightness-200"
                 onClick={() =>
                   setProductDisplay((plus) => {
                     return plus == 4 ? plus - 3 : plus + 1;
                   })
                 }
               >
-                <img src={next} alt=">" className="py-4 px-[18px]" />
+                <img src={next} alt=">" className="py-4 px-[18px] next" />
               </button>
             </div>
             <div className="imageDisplay">
